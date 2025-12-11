@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -76,19 +76,17 @@ export const metadata: Metadata = {
 
   // Manifest
   manifest: '/site.webmanifest',
+};
 
-  // Theme Color
+// Next.js 16: viewport deve estar separado
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#D4AF37' },
     { media: '(prefers-color-scheme: dark)', color: '#D4AF37' },
   ],
-
-  // Viewport
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-  },
 };
 
 export default function RootLayout({
