@@ -1,8 +1,6 @@
-'use client'
+﻿'use client'
 
 import Image from 'next/image'
-import { Phone, MapPin } from 'lucide-react'
-import { WhatsAppIcon, InstagramIcon } from '@/components/icons'
 
 export function Footer() {
     return (
@@ -14,14 +12,14 @@ export function Footer() {
                     <div className="flex flex-col items-center text-center lg:col-span-1">
                         <Image
                             src="/images/footer-logo.png"
-                            alt="Bloom por Tamires Sousa - Especialista em Coloração"
+                            alt="Bloom Hair Logo"
                             width={140}
                             height={140}
                             className="mb-6"
                             style={{ filter: 'drop-shadow(0 0 15px rgba(212, 175, 55, 0.4))' }}
                         />
                         <p className="text-[rgba(232,232,232,0.7)] text-lg">
-                            Especialista em colorimetria capilar em São João del-Rei.
+                            Beleza com atitude, estilo com alma.
                         </p>
                     </div>
 
@@ -33,8 +31,15 @@ export function Footer() {
                                 href="tel:+5532998063010"
                                 className="flex items-center gap-3 text-[rgba(232,232,232,0.7)] hover:text-[#D4AF37] transition-all hover:pl-2 text-lg"
                             >
-                                <Phone className="text-[#D4AF37] w-5 h-5 flex-shrink-0" />
+                                <i className="fas fa-phone text-[#D4AF37] w-6 text-xl"></i>
                                 <span>(32) 99806-3010</span>
+                            </a>
+                            <a
+                                href="mailto:contato@bloomts.com.br"
+                                className="flex items-center gap-3 text-[rgba(232,232,232,0.7)] hover:text-[#D4AF37] transition-all hover:pl-2 text-lg"
+                            >
+                                <i className="fas fa-envelope text-[#D4AF37] w-6 text-xl"></i>
+                                <span>contato@bloomts.com.br</span>
                             </a>
                             <a
                                 href="https://wa.me/5532998063010"
@@ -42,25 +47,25 @@ export function Footer() {
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-3 text-[rgba(232,232,232,0.7)] hover:text-[#D4AF37] transition-all hover:pl-2 text-lg"
                             >
-                                <WhatsAppIcon className="text-[#D4AF37] w-5 h-5 flex-shrink-0" />
-                                <span>Agendar Avaliação</span>
+                                <i className="fab fa-whatsapp text-[#D4AF37] w-6 text-xl"></i>
+                                <span>WhatsApp</span>
                             </a>
                         </div>
                     </div>
 
-                    {/* Localização */}
+                    {/* Localiza├º├úo */}
                     <div>
-                        <h4 className="text-[#D4AF37] mb-8 text-3xl font-bold">Localização</h4>
+                        <h4 className="text-[#D4AF37] mb-8 text-3xl font-bold">Localiza├º├úo</h4>
                         <a
-                            href="https://www.google.com/maps/search/?api=1&query=Rua+Antônio+Rocha,+55+Centro+São+João+del+Rei+MG"
+                            href="https://www.google.com/maps/search/?api=1&query=Rua+Ant├┤nio+Rocha,+55+Centro+S├úo+Jo├úo+Del+Rei+MG"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-start gap-3 text-[rgba(232,232,232,0.7)] hover:text-[#D4AF37] transition-all hover:pl-2 text-lg"
                         >
-                            <MapPin className="text-[#D4AF37] w-5 h-5 flex-shrink-0 mt-1" />
+                            <i className="fas fa-map-marker-alt text-[#D4AF37] w-6 text-xl mt-1"></i>
                             <span>
-                                Rua Antônio Rocha, 55<br />
-                                Centro, São João del-Rei — MG
+                                Rua Ant├┤nio Rocha, 53<br />
+                                Centro, S├úo Jo├úo Del Rei - MG
                             </span>
                         </a>
                     </div>
@@ -72,11 +77,20 @@ export function Footer() {
                             <a
                                 href="https://instagram.com/bloomhairts"
                                 target="_blank"
-                                rel="me noopener noreferrer"
+                                rel="noopener noreferrer"
                                 className="flex items-center gap-3 text-[rgba(232,232,232,0.7)] hover:text-[#D4AF37] transition-all hover:pl-2 text-lg"
                             >
-                                <InstagramIcon className="text-[#D4AF37] w-5 h-5 flex-shrink-0" />
-                                <span>@bloomhairts</span>
+                                <i className="fab fa-instagram text-[#D4AF37] w-6 text-xl"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a
+                                href="https://facebook.com/bloomhairts"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-3 text-[rgba(232,232,232,0.7)] hover:text-[#D4AF37] transition-all hover:pl-2 text-lg"
+                            >
+                                <i className="fab fa-facebook text-[#D4AF37] w-6 text-xl"></i>
+                                <span>Facebook</span>
                             </a>
                         </div>
                     </div>
@@ -85,17 +99,15 @@ export function Footer() {
                 {/* Copyright */}
                 <div className="text-center pt-8 border-t border-[rgba(255,248,175,0.1)]">
                     <p className="text-[rgba(232,232,232,0.5)] text-base">
-                        © {new Date().getFullYear()} Bloom por Tamires Sousa. Todos os direitos reservados.
+                        ┬® {new Date().getFullYear()} Bloom por Tamires Sousa. Todos os direitos reservados.
                     </p>
-                    <p className="text-[rgba(232,232,232,0.5)] text-base mt-2 flex items-center justify-center gap-1">
-                        Desenvolvido com{' '}
-                        <span className="text-[#D4AF37]">♥</span>
-                        {' '}por{' '}
+                    <p className="text-[rgba(232,232,232,0.5)] text-base mt-2">
+                        Desenvolvido com &#128155; por{' '}
                         <a
-                            href="https://aurago.site/"
+                            href="https://aurago.site"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-[#D4AF37] font-bold hover:underline"
+                            className="text-[#D4AF37] font-bold hover:text-[#fff8af] transition-colors duration-300"
                         >
                             Aura Go
                         </a>

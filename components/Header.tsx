@@ -1,194 +1,124 @@
-/**
- * 📚 AULA 1: COMPONENTE HEADER
- * 
- * Vamos converter o header HTML para React/TypeScript
- * 
- * CONCEITOS QUE VOCÊ VAI APRENDER:
- * 1. 'use client' - Componentes que usam interatividade no navegador
- * 2. useState - Gerenciar estado (dados que mudam)
- * 3. useEffect - Executar código quando algo acontece
- * 4. JSX - HTML dentro do JavaScript
- * 5.ClassName condicional - Mudar classes dinamicamente
- */
-
 'use client'
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
+import { Menu, X } from 'lucide-react'
+import { WhatsAppIcon, InstagramIcon } from '@/components/icons'
 
-/**
- * EXPLICAÇÃO: 'use client'
- * 
- * No Next.js, componentes são renderizados no SERVIDOR por padrão.
- * Mas nosso header precisa detectar scroll = navegador!
- * Por isso usamos 'use client' para dizer:
- * "Ei Next.js, este componente roda no navegador"
- */
+const navLinks = [
+    { href: '/servicos', label: 'Serviços' },
+    { href: '/sobre', label: 'Sobre' },
+    { href: '/galeria', label: 'Galeria' },
+    { href: '/contato', label: 'Contato' },
+]
 
 export function Header() {
-    /**
-     * EXPLICAÇÃO: useState
-     * 
-     * Em React, quando dados mudam, a interface atualiza automaticamente.
-     * useState cria uma "variável especial" que React observa.
-     * 
-     * const [valor, funcaoParaMudar] = useState(valorInicial)
-     * 
-     * Aqui: scrolled começa como false
-     * Quando rolarmos a página, vamos mudar para true
-     */
     const [scrolled, setScrolled] = useState(false)
+    const [menuOpen, setMenuOpen] = useState(false)
 
-    /**
-     * EXPLICAÇÃO: useEffect
-     * 
-     * Executar código quando o componente aparece na tela.
-     * Aqui vamos:
-     * 1. Adicionar um listener de scroll
-     * 2. Quando scroll > 50px, mudar scrolled para true
-     * 3. Limpar o listener quando componente sair da tela
-     */
     useEffect(() => {
-        const handleScroll = () => {
-            // Se scrollY > 50, scrolled = true, senão = false
-            setScrolled(window.scrollY > 50)
-        }
-
-        // Adiciona o listener
+        const handleScroll = () => setScrolled(window.scrollY > 50)
         window.addEventListener('scroll', handleScroll)
-
-        // IMPORTANTE: Cleanup function
-        // Remove o listener quando componente é destruído
         return () => window.removeEventListener('scroll', handleScroll)
-    }, []) // [] = executar apenas uma vez, quando componente aparecer
+    }, [])
 
-    /**
-     * EXPLICAÇÃO: JSX (Return)
-     * 
-     * JSX parece HTML, mas é JavaScript!
-     * Diferenças importantes:
-     * 
-     * HTML:           JSX:
-     * class=""        className=""
-     * for=""          htmlFor=""
-     * <img>           <img />
-     * onclick=""      onClick={}
-     * style=""        style={{}}
-     */
     return (
         <header
-            /**
-             * EXPLICAÇÃO: className condicional
-             * 
-             * Em HTML você faria isso com JavaScript:
-             *   if (scrolled) header.classList.add('scrolled')
-             * 
-             * Em React, usamos template strings:
-             *   `classe-fixa ${condicao ? 'classe-extra' : ''}`
-             * 
-             * Aqui: se scrolled = true, adiciona 'scrolled'
-             */
             className={`fixed top-0 w-full z-[1000] px-[5%] transition-all duration-500 ${scrolled
                 ? 'py-4 bg-[rgba(1,34,32,0.95)] shadow-[0_10px_40px_rgba(0,0,0,0.3)]'
                 : 'py-6 bg-[rgba(1,34,32,0.3)]'
                 } backdrop-blur-[20px] border-b border-[rgba(255,248,175,0.1)]`}
         >
             <div className="max-w-[1400px] mx-auto flex justify-between items-center">
+                <Link href="/">
+                    <Image
+                        src="/images/logo.webp"
+                        alt="Bloom por Tamires Sousa, Especialista em Coloração em São João del-Rei"
+                        width={100}
+                        height={100}
+                        className={`relative z-10 w-auto transition-all duration-500 ${scrolled
+                            ? 'h-[70px] sm:h-[85px] md:h-[100px] -mt-[10px] -mb-[10px] sm:-mt-[12px] sm:-mb-[12px] md:-mt-[15px] md:-mb-[15px]'
+                            : 'h-[80px] sm:h-[90px] md:h-[100px] -mt-[20px] -mb-[20px] sm:-mt-[25px] sm:-mb-[25px] md:-mt-[30px] md:-mb-[30px]'
+                            }`}
+                        style={{ filter: 'drop-shadow(0 0 20px rgba(212, 175, 55, 0.5))' }}
+                        priority
+                        fetchPriority="high"
+                        loading="eager"
+                    />
+                </Link>
 
-                {/**
-         * EXPLICAÇÃO: Image do Next.js
-         * 
-         * Em vez de <img>, usamos <Image> do Next.js
-         * Vantagens:
-         * - Otimização automática de tamanho
-         * - Lazy loading (carrega só quando visível)
-         * - Formatos modernos (WebP)
-         * 
-         * IMPORTANTE:
-         * - src começa com "/" = público
-         * - width/height são obrigatórios
-         * - alt sempre necessário (acessibilidade)
-         */}
-                <Image
-                    src="/images/logo.webp"
-                    alt="Bloom por Tamires Sousa - Salão de Beleza em São João Del Rei"
-                    width={100}
-                    height={100}
-                    className={`relative z-10 w-auto transition-all duration-500 ${scrolled
-                        ? 'h-[70px] sm:h-[85px] md:h-[100px] -mt-[10px] -mb-[10px] sm:-mt-[12px] sm:-mb-[12px] md:-mt-[15px] md:-mb-[15px]'
-                        : 'h-[80px] sm:h-[90px] md:h-[100px] -mt-[20px] -mb-[20px] sm:-mt-[25px] sm:-mb-[25px] md:-mt-[30px] md:-mb-[30px]'
-                        }`}
-                    style={{
-                        filter: 'drop-shadow(0 0 20px rgba(212, 175, 55, 0.5))'
-                    }}
-                    priority // Carrega imediatamente (não faz lazy load)
-                />
-
-                <nav className="flex gap-3 sm:gap-4 md:gap-6">
-                    {/**
-           * EXPLICAÇÃO: Links
-           * 
-           * Mantemos <a> normal para links externos
-           * Para links internos (entre páginas do seu site),
-           * usaríamos <Link> do next/link
-           */}
+                {/* Desktop nav */}
+                <nav className="hidden md:flex items-center gap-6 lg:gap-8" aria-label="Navegação principal">
+                    {navLinks.map((link) => (
+                        <Link
+                            key={link.href}
+                            href={link.href}
+                            className="text-[rgba(232,232,232,0.8)] hover:text-[#D4AF37] transition-colors text-sm font-medium tracking-wide"
+                        >
+                            {link.label}
+                        </Link>
+                    ))}
                     <a
                         href="https://instagram.com/bloomhairts"
                         target="_blank"
-                        rel="noopener noreferrer"
-                        className="
-              relative flex items-center justify-center
-              w-[45px] h-[45px] rounded-full
-              bg-[rgba(255,255,255,0.05)]
-              text-[#e8e8e8] text-xl
-              transition-all duration-300
-              hover:text-[#000000] hover:-translate-y-1
-              before:content-[''] before:absolute before:w-full before:h-full
-              before:rounded-full before:bg-[#D4AF37]
-              before:scale-0 before:transition-transform before:duration-300
-              before:-z-10
-              hover:before:scale-100
-            "
+                        rel="me noopener noreferrer"
+                        className="relative flex items-center justify-center w-[40px] h-[40px] rounded-full bg-[rgba(255,255,255,0.05)] text-[#e8e8e8] transition-all duration-300 hover:text-[#000000] hover:-translate-y-1 before:content-[''] before:absolute before:w-full before:h-full before:rounded-full before:bg-[#D4AF37] before:scale-0 before:transition-transform before:duration-300 before:-z-10 hover:before:scale-100"
+                        aria-label="Instagram"
                     >
-                        <i className="fab fa-instagram"></i>
+                        <InstagramIcon className="w-5 h-5" />
                     </a>
-
                     <a
                         href="https://wa.me/5532998063010"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="
-              relative flex items-center justify-center
-              w-[45px] h-[45px] rounded-full
-              bg-[rgba(255,255,255,0.05)]
-              text-[#e8e8e8] text-xl
-              transition-all duration-300
-              hover:text-[#000000] hover:-translate-y-1
-              before:content-[''] before:absolute before:w-full before:h-full
-              before:rounded-full before:bg-[#D4AF37]
-              before:scale-0 before:transition-transform before:duration-300
-              before:-z-10
-              hover:before:scale-100
-            "
+                        className="relative flex items-center justify-center w-[40px] h-[40px] rounded-full bg-[rgba(255,255,255,0.05)] text-[#e8e8e8] transition-all duration-300 hover:text-[#000000] hover:-translate-y-1 before:content-[''] before:absolute before:w-full before:h-full before:rounded-full before:bg-[#D4AF37] before:scale-0 before:transition-transform before:duration-300 before:-z-10 hover:before:scale-100"
+                        aria-label="WhatsApp"
                     >
-                        <i className="fab fa-whatsapp"></i>
+                        <WhatsAppIcon className="w-5 h-5" />
                     </a>
                 </nav>
+
+                {/* Mobile: ícones + hamburger */}
+                <div className="flex md:hidden items-center gap-3">
+                    <a
+                        href="https://wa.me/5532998063010"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center w-[40px] h-[40px] rounded-full bg-[rgba(255,255,255,0.05)] text-[#e8e8e8]"
+                        aria-label="WhatsApp"
+                    >
+                        <WhatsAppIcon className="w-5 h-5" />
+                    </a>
+                    <button
+                        onClick={() => setMenuOpen(!menuOpen)}
+                        className="flex items-center justify-center w-[40px] h-[40px] rounded-full bg-[rgba(255,255,255,0.05)] text-[#e8e8e8]"
+                        aria-label="Menu"
+                        aria-expanded={menuOpen}
+                    >
+                        {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                    </button>
+                </div>
             </div>
+
+            {/* Mobile menu */}
+            {menuOpen && (
+                <nav
+                    className="md:hidden mt-4 pb-4 border-t border-[rgba(255,248,175,0.1)] pt-4 flex flex-col gap-4"
+                    aria-label="Menu mobile"
+                >
+                    {navLinks.map((link) => (
+                        <Link
+                            key={link.href}
+                            href={link.href}
+                            onClick={() => setMenuOpen(false)}
+                            className="text-[rgba(232,232,232,0.8)] hover:text-[#D4AF37] transition-colors text-base font-medium px-2"
+                        >
+                            {link.label}
+                        </Link>
+                    ))}
+                </nav>
+            )}
         </header>
     )
 }
-
-/**
- * 🎓 RESUMO DO QUE APRENDEMOS:
- * 
- * 1. 'use client' - Para componentes interativos
- * 2. useState - Para dados que mudam (scrolled)
- * 3. useEffect - Para eventos (scroll listener)
- * 4. JSX - class → className, <img> → <img />
- * 5. Image - Otimização automática de imagens
- * 6. Template strings - Para classes condicionais
- * 7. Cleanup - Remover listeners para evitar memory leaks
- * 
- * PRÓXIMA AULA: Footer (mais simples, sem interatividade)
- */
