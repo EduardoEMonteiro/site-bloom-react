@@ -79,7 +79,7 @@ export default function ServicosPage() {
           <h2 className="text-3xl font-bold text-[#fff8af] mb-4">Na dúvida sobre qual serviço escolher?</h2>
           <p className="text-[rgba(232,232,232,0.8)] mb-8 text-lg">
             Envie uma mensagem com uma foto atual do cabelo e uma referência do resultado que você quer.
-            O Bloom fica na Rua Antônio Rocha, 55, Centro, São João del-Rei, MG.
+            O Bloom fica na Rua Antônio Rocha, 53, Centro, São João del-Rei, MG.
           </p>
           <a
             href="https://wa.me/5532998063010?text=Olá%20Tamires%2C%20quero%20agendar%20um%20horário"

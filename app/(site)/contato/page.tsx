@@ -6,11 +6,11 @@ import { WhatsAppIcon, InstagramIcon } from '@/components/icons'
 export const metadata: Metadata = {
   title: 'Contato e Endereço | Bloom por Tamires Sousa',
   description:
-    'Fale com o Bloom por Tamires Sousa pelo WhatsApp e veja o endereço: Rua Antônio Rocha, 55, Centro, São João del-Rei, MG.',
+    'Fale com o Bloom por Tamires Sousa pelo WhatsApp e veja o endereço: Rua Antônio Rocha, 53, Centro, São João del-Rei, MG.',
   alternates: { canonical: 'https://bloomts.com.br/contato' },
   openGraph: {
     title: 'Contato — Bloom por Tamires Sousa em São João del-Rei',
-    description: 'Rua Antônio Rocha, 55, Centro, São João del-Rei, MG. Agendamento pelo WhatsApp.',
+    description: 'Rua Antônio Rocha, 53, Centro, São João del-Rei, MG. Agendamento pelo WhatsApp.',
     url: 'https://bloomts.com.br/contato',
     locale: 'pt_BR',
     type: 'website',
@@ -43,18 +43,13 @@ const localBusinessSchema = {
   telephone: '+5532998063010',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Rua Antônio Rocha, 55',
+    streetAddress: 'Rua Antônio Rocha, 53',
     addressLocality: 'São João del-Rei',
     addressRegion: 'MG',
     postalCode: '36300-000',
     addressCountry: 'BR',
   },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: -21.131552,
-    longitude: -44.256833,
-  },
-  hasMap: 'https://www.google.com/maps/search/?api=1&query=Rua+Antônio+Rocha,+55+Centro+São+João+del+Rei+MG',
+  hasMap: 'https://www.google.com/maps/search/?api=1&query=Rua+Antônio+Rocha,+53+Centro+São+João+del+Rei+MG',
   openingHoursSpecification: [
     { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '09:00', closes: '18:00' },
     { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Saturday'], opens: '09:00', closes: '14:00' },
@@ -160,7 +155,7 @@ export default function ContatoPage() {
             {/* NAP em texto corrido — crítico para SEO local e GEO */}
             <address className="not-italic text-[rgba(232,232,232,0.85)] leading-relaxed mb-6">
               <strong className="text-[#fff8af]">Bloom por Tamires Sousa</strong><br />
-              Rua Antônio Rocha, 55<br />
+              Rua Antônio Rocha, 53<br />
               Centro, São João del-Rei — MG<br />
               CEP: 36300-000<br />
               Tel: <a href="tel:+5532998063010" className="text-[#D4AF37] hover:underline">(32) 99806-3010</a>
@@ -170,7 +165,7 @@ export default function ContatoPage() {
               Próximo à Praça Severiano Resende.
             </p>
             <a
-              href="https://www.google.com/maps/search/?api=1&query=Rua+Antônio+Rocha,+55+Centro+São+João+del+Rei+MG"
+              href="https://www.google.com/maps/search/?api=1&query=Rua+Antônio+Rocha,+53+Centro+São+João+del+Rei+MG"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 bg-[#D4AF37] text-black font-bold px-6 py-3 rounded-full hover:bg-[#fff8af] transition-colors w-fit"
@@ -184,14 +179,14 @@ export default function ContatoPage() {
         {/* Mapa embed */}
         <div className="rounded-2xl overflow-hidden border border-[rgba(255,248,175,0.15)] mb-16">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3748.5!2d-44.256833!3d-21.131552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDA3JzUzLjYiUyA0NMKwMTUnMjQuNiJX!5e0!3m2!1spt-BR!2sbr!4v1"
+            src="https://www.google.com/maps?q=Rua%20Ant%C3%B4nio%20Rocha%2C%2053%2C%20Centro%2C%20S%C3%A3o%20Jo%C3%A3o%20del-Rei%2C%20MG&output=embed"
             width="100%"
             height="400"
             style={{ border: 0 }}
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Localização do Bloom por Tamires Sousa — Rua Antônio Rocha, 55, Centro, São João del-Rei, MG"
+            title="Localização do Bloom por Tamires Sousa — Rua Antônio Rocha, 53, Centro, São João del-Rei, MG"
           />
         </div>
 

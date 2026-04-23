@@ -17,8 +17,8 @@ const links = [
   },
   {
     id: "endereco",
-    label: "Como chegar: Rua Antônio Rocha, 55",
-    href: "https://www.google.com/maps/search/?api=1&query=Rua+Ant%C3%B4nio+Rocha,+55+Centro+S%C3%A3o+Jo%C3%A3o+Del+Rei+MG",
+    label: "Como chegar: Rua Antônio Rocha, 53",
+    href: "https://www.google.com/maps/search/?api=1&query=Rua+Ant%C3%B4nio+Rocha,+53+Centro+S%C3%A3o+Jo%C3%A3o+Del+Rei+MG",
   },
   {
     id: "site",

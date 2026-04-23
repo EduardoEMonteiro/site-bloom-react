@@ -17,7 +17,7 @@ const faqs = [
   {
     question: 'Onde fica o Bloom?',
     answer:
-      'O Bloom fica na Rua Antônio Rocha, 55, Centro, São João del-Rei, MG. O atendimento é com hora marcada.',
+      'O Bloom fica na Rua Antônio Rocha, 53, Centro, São João del-Rei, MG. O atendimento é com hora marcada.',
   },
 ]
 

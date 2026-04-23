@@ -52,7 +52,7 @@ export function Hero() {
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
               <strong className="block text-[#fff8af]">Centro</strong>
-              Rua Antônio Rocha, 55
+              Rua Antônio Rocha, 53
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
               <strong className="block text-[#fff8af]">Plano realista</strong>

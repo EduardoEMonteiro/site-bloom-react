@@ -52,14 +52,14 @@ export function Footer() {
                     <div>
                         <h4 className="text-[#D4AF37] mb-8 text-3xl font-bold">Localização</h4>
                         <a
-                            href="https://www.google.com/maps/search/?api=1&query=Rua+Antônio+Rocha,+55+Centro+São+João+del+Rei+MG"
+                            href="https://www.google.com/maps/search/?api=1&query=Rua+Antônio+Rocha,+53+Centro+São+João+del+Rei+MG"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-start gap-3 text-[rgba(232,232,232,0.7)] hover:text-[#D4AF37] transition-all hover:pl-2 text-lg"
                         >
                             <MapPin className="text-[#D4AF37] w-5 h-5 flex-shrink-0 mt-1" />
                             <span>
-                                Rua Antônio Rocha, 55<br />
+                                Rua Antônio Rocha, 53<br />
                                 Centro, São João del-Rei — MG
                             </span>
                         </a>

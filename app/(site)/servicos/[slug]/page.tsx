@@ -64,7 +64,7 @@ export default async function ServicePage({ params }: Props) {
       telephone: '+5532998063010',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Rua Antônio Rocha, 55',
+        streetAddress: 'Rua Antônio Rocha, 53',
         addressLocality: 'São João del-Rei',
         addressRegion: 'MG',
         postalCode: '36300-000',
@@ -158,7 +158,7 @@ export default async function ServicePage({ params }: Props) {
             Onde fica o Bloom — São João del-Rei, MG
           </h2>
           <p className="text-lg text-[rgba(232,232,232,0.85)] leading-relaxed">
-            O Bloom por Tamires Sousa está localizado na <strong className="text-[#D4AF37]">Rua Antônio Rocha, 55, Centro, São João del-Rei, MG</strong> — CEP 36300-000.
+            O Bloom por Tamires Sousa está localizado na <strong className="text-[#D4AF37]">Rua Antônio Rocha, 53, Centro, São João del-Rei, MG</strong> — CEP 36300-000.
             O salão fica no coração do centro histórico de São João del-Rei, de fácil acesso a pé ou de carro.
             Atendimento com hora marcada pelo WhatsApp: <a href="tel:+5532998063010" className="text-[#D4AF37] hover:underline">(32) 99806-3010</a>.
           </p>
@@ -172,7 +172,7 @@ export default async function ServicePage({ params }: Props) {
               Agendar pelo WhatsApp
             </a>
             <a
-              href="https://www.google.com/maps/search/?api=1&query=Rua+Antônio+Rocha,+55+Centro+São+João+del+Rei+MG"
+              href="https://www.google.com/maps/search/?api=1&query=Rua+Antônio+Rocha,+53+Centro+São+João+del+Rei+MG"
               target="_blank"
               rel="noopener noreferrer"
               className="border border-[#D4AF37] text-[#D4AF37] font-bold px-8 py-3 rounded-full hover:bg-[#D4AF37] hover:text-black transition-colors"

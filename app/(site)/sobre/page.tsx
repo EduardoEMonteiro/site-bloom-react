@@ -45,7 +45,7 @@ const personSchema = {
     url: 'https://bloomts.com.br',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Rua Antônio Rocha, 55',
+      streetAddress: 'Rua Antônio Rocha, 53',
       addressLocality: 'São João del-Rei',
       addressRegion: 'MG',
       postalCode: '36300-000',
@@ -114,7 +114,7 @@ export default function SobrePage() {
               </p>
               <p>
                 O <strong className="text-[#fff8af]">Bloom por Tamires Sousa</strong> está localizado na{' '}
-                <strong className="text-[#fff8af]">Rua Antônio Rocha, 55, Centro, São João del-Rei, MG — CEP 36300-000</strong>.
+                <strong className="text-[#fff8af]">Rua Antônio Rocha, 53, Centro, São João del-Rei, MG — CEP 36300-000</strong>.
                 O atendimento é com hora marcada, para que cada cliente tenha tempo de conversa, diagnóstico e orientação
                 sobre a manutenção depois do salão.
               </p>
@@ -173,7 +173,7 @@ export default function SobrePage() {
         <div className="mt-16 p-8 rounded-2xl border border-[rgba(255,248,175,0.15)] bg-[rgba(1,34,32,0.4)] text-center">
           <p className="text-[rgba(232,232,232,0.7)] text-lg leading-relaxed">
             <strong className="text-[#fff8af]">Bloom por Tamires Sousa</strong><br />
-            Rua Antônio Rocha, 55, Centro — São João del-Rei, MG — CEP 36300-000<br />
+            Rua Antônio Rocha, 53, Centro — São João del-Rei, MG — CEP 36300-000<br />
             <a href="tel:+5532998063010" className="text-[#D4AF37] hover:underline">(32) 99806-3010</a>
           </p>
         </div>

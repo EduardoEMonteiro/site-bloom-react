@@ -107,18 +107,13 @@ export default function RootLayout({
     "image": "https://bloomts.com.br/images/logo.webp",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Rua Antônio Rocha, 55",
+      "streetAddress": "Rua Antônio Rocha, 53",
       "addressLocality": "São João del-Rei",
       "addressRegion": "MG",
       "postalCode": "36300-000",
       "addressCountry": "BR"
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": -21.131552,
-      "longitude": -44.256833
-    },
-    "hasMap": "https://www.google.com/maps/search/?api=1&query=Rua+Antônio+Rocha,+55+Centro+São+João+del+Rei+MG",
+    "hasMap": "https://www.google.com/maps/search/?api=1&query=Rua+Antônio+Rocha,+53+Centro+São+João+del+Rei+MG",
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
