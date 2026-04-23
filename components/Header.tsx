@@ -13,6 +13,9 @@ const navLinks = [
     { href: '/contato', label: 'Contato' },
 ]
 
+const whatsappHref =
+    'https://wa.me/5532998063010?text=Olá%20Tamires!%20Vim%20pelo%20site%20e%20quero%20marcar%20uma%20avaliação.'
+
 export function Header() {
     const [scrolled, setScrolled] = useState(false)
     const [menuOpen, setMenuOpen] = useState(false)
@@ -69,20 +72,21 @@ export function Header() {
                         <InstagramIcon className="w-5 h-5" />
                     </a>
                     <a
-                        href="https://wa.me/5532998063010"
+                        href={whatsappHref}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="relative flex items-center justify-center w-[40px] h-[40px] rounded-full bg-[rgba(255,255,255,0.05)] text-[#e8e8e8] transition-all duration-300 hover:text-[#000000] hover:-translate-y-1 before:content-[''] before:absolute before:w-full before:h-full before:rounded-full before:bg-[#D4AF37] before:scale-0 before:transition-transform before:duration-300 before:-z-10 hover:before:scale-100"
-                        aria-label="WhatsApp"
+                        className="inline-flex items-center gap-2 rounded-full bg-[#D4AF37] px-5 py-3 text-sm font-black text-black transition-all hover:-translate-y-1 hover:bg-[#fff8af]"
+                        aria-label="Agendar avaliação pelo WhatsApp"
                     >
                         <WhatsAppIcon className="w-5 h-5" />
+                        Agendar
                     </a>
                 </nav>
 
                 {/* Mobile: ícones + hamburger */}
                 <div className="flex md:hidden items-center gap-3">
                     <a
-                        href="https://wa.me/5532998063010"
+                        href={whatsappHref}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center justify-center w-[40px] h-[40px] rounded-full bg-[rgba(255,255,255,0.05)] text-[#e8e8e8]"
@@ -117,6 +121,14 @@ export function Header() {
                             {link.label}
                         </Link>
                     ))}
+                    <a
+                        href={whatsappHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-2 rounded-full bg-[#D4AF37] px-5 py-3 text-center font-black text-black"
+                    >
+                        Agendar avaliação
+                    </a>
                 </nav>
             )}
         </header>

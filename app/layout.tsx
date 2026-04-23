@@ -1,5 +1,5 @@
 // Root layout — shell mínimo compartilhado por todos os route groups.
-// O (site)/layout.tsx adiciona Header, Footer, LoadingScreen etc.
+// O (site)/layout.tsx adiciona Header, Footer e recursos compartilhados.
 // O links/layout.tsx é completamente isolado.
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return children

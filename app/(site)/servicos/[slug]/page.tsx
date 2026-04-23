@@ -84,6 +84,8 @@ export default async function ServicePage({ params }: Props) {
     })),
   }
 
+  const whatsappHref = `https://wa.me/5532998063010?text=Olá%20Tamires!%20Quero%20marcar%20uma%20avaliação%20sobre%20${encodeURIComponent(service.shortName)}.`
+
   return (
     <main className="min-h-screen bg-black pt-32 pb-24 px-[5%]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
@@ -106,9 +108,24 @@ export default async function ServicePage({ params }: Props) {
           {service.name}
         </h1>
 
+        <div className="mb-12 rounded-2xl border border-[rgba(255,248,175,0.16)] bg-[rgba(255,255,255,0.045)] p-7">
+          <p className="text-lg leading-relaxed text-[rgba(232,232,232,0.84)]">
+            Se você está pensando em fazer {service.shortName.toLowerCase()}, a avaliação é o melhor começo.
+            Ela mostra o que dá para fazer agora, o que precisa de preparo e qual manutenção combina com sua rotina.
+          </p>
+          <a
+            href={whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-block rounded-full bg-[#D4AF37] px-8 py-3 font-bold text-black transition-colors hover:bg-[#fff8af]"
+          >
+            Marcar avaliação pelo WhatsApp
+          </a>
+        </div>
+
         {/* O que é */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-[#fff8af] mb-4">O que é {service.shortName}</h2>
+          <h2 className="text-2xl font-bold text-[#fff8af] mb-4">Sobre {service.shortName}</h2>
           <p className="text-lg text-[rgba(232,232,232,0.85)] leading-relaxed">
             {service.longDescription}
           </p>
@@ -117,7 +134,7 @@ export default async function ServicePage({ params }: Props) {
         {/* Como funciona no Bloom */}
         <section className="mb-12 p-8 rounded-2xl border border-[rgba(255,248,175,0.15)] bg-[rgba(255,255,255,0.04)]">
           <h2 className="text-2xl font-bold text-[#fff8af] mb-4">
-            Como funciona no Bloom por Tamires Sousa
+            Como funciona no Bloom
           </h2>
           <p className="text-lg text-[rgba(232,232,232,0.85)] leading-relaxed">
             {service.howItWorks}
@@ -143,11 +160,11 @@ export default async function ServicePage({ params }: Props) {
           <p className="text-lg text-[rgba(232,232,232,0.85)] leading-relaxed">
             O Bloom por Tamires Sousa está localizado na <strong className="text-[#D4AF37]">Rua Antônio Rocha, 55, Centro, São João del-Rei, MG</strong> — CEP 36300-000.
             O salão fica no coração do centro histórico de São João del-Rei, de fácil acesso a pé ou de carro.
-            Atendimento exclusivo com hora marcada pelo WhatsApp: <a href="tel:+5532998063010" className="text-[#D4AF37] hover:underline">(32) 99806-3010</a>.
+            Atendimento com hora marcada pelo WhatsApp: <a href="tel:+5532998063010" className="text-[#D4AF37] hover:underline">(32) 99806-3010</a>.
           </p>
           <div className="flex flex-wrap gap-4 mt-6">
             <a
-              href="https://wa.me/5532998063010?text=Olá%20Tamires%2C%20quero%20agendar%20um%20horário"
+              href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#D4AF37] text-black font-bold px-8 py-3 rounded-full hover:bg-[#fff8af] transition-colors"

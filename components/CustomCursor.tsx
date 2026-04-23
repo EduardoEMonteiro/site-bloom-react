@@ -17,7 +17,9 @@ export function CustomCursor() {
         const isDesktop = window.matchMedia('(min-width: 968px)').matches
         if (!isDesktop) return
 
-        setIsVisible(true)
+        const visibilityFrame = window.requestAnimationFrame(() => {
+            setIsVisible(true)
+        })
 
         const handleMouseMove = (e: MouseEvent) => {
             setPosition({ x: e.clientX, y: e.clientY })
@@ -30,7 +32,10 @@ export function CustomCursor() {
 
         window.addEventListener('mousemove', handleMouseMove)
 
-        return () => window.removeEventListener('mousemove', handleMouseMove)
+        return () => {
+            window.cancelAnimationFrame(visibilityFrame)
+            window.removeEventListener('mousemove', handleMouseMove)
+        }
     }, [])
 
     if (!isVisible) return null

@@ -3,14 +3,14 @@ import Link from 'next/link'
 import { services } from '@/lib/services-data'
 
 export const metadata: Metadata = {
-  title: 'Serviços de Beleza em São João del-Rei | Bloom por Tamires Sousa',
+  title: 'Serviços de Colorimetria em São João del-Rei | Bloom',
   description:
-    'Coloração, luzes, ruivos, loiros, hidratação e escova progressiva em São João del-Rei. Especialista Tamires Sousa — agende pelo WhatsApp.',
+    'Ruivos, loiros, mechas, coloração, cobertura de brancos e tratamentos no Bloom por Tamires Sousa em São João del-Rei.',
   alternates: { canonical: 'https://bloomts.com.br/servicos' },
   openGraph: {
-    title: 'Serviços de Beleza em São João del-Rei | Bloom por Tamires Sousa',
+    title: 'Serviços de Colorimetria em São João del-Rei | Bloom',
     description:
-      'Coloração, luzes, ruivos, loiros, hidratação e escova progressiva em São João del-Rei.',
+      'Ruivos, loiros, mechas, coloração e tratamentos com avaliação do fio.',
     url: 'https://bloomts.com.br/servicos',
     locale: 'pt_BR',
     type: 'website',
@@ -48,11 +48,11 @@ export default function ServicosPage() {
         </nav>
 
         <h1 className="text-5xl md:text-6xl font-black mb-6 bg-gradient-to-r from-[#fff8af] to-[#D4AF37] bg-clip-text text-transparent">
-          Serviços em São João del-Rei
+          Serviços para mudar a cor sem ignorar a saúde do fio
         </h1>
         <p className="text-xl text-[rgba(232,232,232,0.8)] mb-16 max-w-[700px] leading-relaxed">
-          O Bloom por Tamires Sousa oferece serviços especializados em colorimetria capilar em São João del-Rei, MG.
-          Cada atendimento é personalizado para garantir o melhor resultado com saúde e técnica.
+          No Bloom, o atendimento começa pela avaliação: o que você quer, como está o cabelo hoje e qual caminho é mais seguro.
+          Veja os serviços principais e, se estiver em dúvida, chame no WhatsApp para conversar.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -69,16 +69,17 @@ export default function ServicosPage() {
                 {service.description}
               </p>
               <span className="text-[#D4AF37] text-sm font-semibold group-hover:underline">
-                Saiba mais →
+                Ver detalhes →
               </span>
             </Link>
           ))}
         </div>
 
         <div className="mt-20 p-10 rounded-2xl border border-[rgba(255,248,175,0.2)] bg-[rgba(255,255,255,0.04)] text-center">
-          <h2 className="text-3xl font-bold text-[#fff8af] mb-4">Agende seu horário</h2>
+          <h2 className="text-3xl font-bold text-[#fff8af] mb-4">Na dúvida sobre qual serviço escolher?</h2>
           <p className="text-[rgba(232,232,232,0.8)] mb-8 text-lg">
-            Atendimento exclusivo pelo WhatsApp. Bloom por Tamires Sousa — Rua Antônio Rocha, 55, Centro, São João del-Rei, MG.
+            Envie uma mensagem com uma foto atual do cabelo e uma referência do resultado que você quer.
+            O Bloom fica na Rua Antônio Rocha, 55, Centro, São João del-Rei, MG.
           </p>
           <a
             href="https://wa.me/5532998063010?text=Olá%20Tamires%2C%20quero%20agendar%20um%20horário"

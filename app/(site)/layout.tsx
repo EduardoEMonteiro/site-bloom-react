@@ -5,7 +5,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
-import { LoadingScreen } from "@/components/LoadingScreen";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,34 +18,35 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://bloomts.com.br'),
-  title: "Bloom por Tamires Sousa, Especialista em Coloração em São João del Rei",
-  description: "Especialista em colorimetria capilar em São João del Rei. Referência em cabelos ruivos, loiros saudáveis e cores criativas. Agende sua avaliação pelo WhatsApp.",
-  keywords: ["colorista em são joão del rei", "bloom por tamires sousa", "colorimetria capilar", "cabelos ruivos", "loiros saudáveis", "cores criativas", "mechas iluminadas", "saúde da fibra capilar", "cronograma capilar pós-química", "salão de beleza sjdr"],
+  title: "Bloom por Tamires Sousa | Colorimetria em São João del-Rei",
+  description: "Ruivos, loiros, mechas, cobertura de brancos e tratamentos capilares com avaliação do fio em São João del-Rei. Agende pelo WhatsApp.",
+  keywords: ["colorista em são joão del rei", "bloom por tamires sousa", "colorimetria capilar", "cabelo ruivo", "loiro saudável", "mechas", "cobertura de brancos", "tratamento capilar"],
   authors: [{ name: "Tamires Sousa" }],
   creator: "Bloom por Tamires Sousa",
   publisher: "Bloom por Tamires Sousa",
+  alternates: { canonical: 'https://bloomts.com.br' },
 
   // Open Graph (Facebook, WhatsApp, LinkedIn)
   openGraph: {
     type: "website",
     locale: "pt_BR",
     url: "https://bloomts.com.br",
-    title: "Bloom por Tamires Sousa, Especialista em Coloração",
-    description: "Colorimetria capilar em São João del Rei. Ruivos, loiros saudáveis e cores criativas com técnica e segurança.",
+    title: "Bloom por Tamires Sousa | Colorimetria em São João del-Rei",
+    description: "Cor bonita com avaliação do fio, cuidado e hora marcada em São João del-Rei.",
     siteName: "Bloom por Tamires Sousa",
     images: [{
       url: "/images/logo.webp",
       width: 500,
       height: 500,
-      alt: "Bloom por Tamires Sousa, Especialista em Coloração"
+      alt: "Bloom por Tamires Sousa"
     }],
   },
 
   // Twitter Card
   twitter: {
     card: "summary_large_image",
-    title: "Bloom por Tamires Sousa, Especialista em Coloração",
-    description: "Colorimetria capilar em São João del Rei. Agende sua avaliação.",
+    title: "Bloom por Tamires Sousa | Colorimetria em São João del-Rei",
+    description: "Ruivos, loiros, mechas e tratamentos com avaliação do fio.",
     images: ["/images/logo.webp"],
   },
 
@@ -100,7 +100,8 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "HairSalon",
     "name": "Bloom por Tamires Sousa",
-    "description": "Especialista em colorimetria capilar em São João del-Rei. Referência técnica em cabelos ruivos, loiros saudáveis e cores criativas.",
+    "@id": "https://bloomts.com.br/#salao",
+    "description": "Salão especializado em colorimetria capilar em São João del-Rei, com atendimento para ruivos, loiros, mechas, cobertura de brancos e tratamentos.",
     "url": "https://bloomts.com.br",
     "telephone": "+5532998063010",
     "image": "https://bloomts.com.br/images/logo.webp",
@@ -133,16 +134,17 @@ export default function RootLayout({
       }
     ],
     "priceRange": "$$",
-    "servesCuisine": null,
+    "areaServed": [
+      { "@type": "City", "name": "São João del-Rei" },
+      { "@type": "AdministrativeArea", "name": "Campo das Vertentes" }
+    ],
     "knowsAbout": [
-      "Coloração de Cabelos Ruivos",
-      "Mechas e Loiros Saudáveis",
-      "Luzes Californianas e Balayage",
-      "Gloss Express: Cobertura de Fios Brancos",
-      "Colorimetria de Alta Performance Schwarzkopf",
-      "Saúde Capilar e Pigmentação Seletiva",
-      "Escova Progressiva",
-      "Hidratação Capilar Pós-Química"
+      "Colorimetria capilar",
+      "Cabelos ruivos",
+      "Loiros e mechas",
+      "Cobertura de fios brancos",
+      "Tratamento capilar pós-química",
+      "Escova progressiva"
     ],
     "sameAs": [
       "https://instagram.com/bloomhairts"
@@ -165,8 +167,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <LoadingScreen />
-
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

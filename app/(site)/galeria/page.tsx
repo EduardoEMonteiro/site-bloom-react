@@ -3,9 +3,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Galeria de Fotos — Bloom por Tamires Sousa em São João del-Rei',
+  title: 'Galeria de Cabelos | Bloom por Tamires Sousa',
   description:
-    'Veja o portfólio de trabalhos do Bloom por Tamires Sousa em São João del-Rei. Ruivos, loiros, mechas e colorações criativas com resultados reais.',
+    'Veja resultados de ruivos, loiros, mechas e colorações feitos no Bloom por Tamires Sousa em São João del-Rei.',
   alternates: { canonical: 'https://bloomts.com.br/galeria' },
   openGraph: {
     title: 'Galeria — Bloom por Tamires Sousa em São João del-Rei',
@@ -27,37 +27,30 @@ const galleryItems = [
   {
     src: '/images/gallery-1.webp',
     alt: 'Cabelo ruivo acobreado — resultado no Bloom por Tamires Sousa, Centro de São João del-Rei MG',
-    label: 'Ruivo Acobreado',
   },
   {
     src: '/images/gallery-2.webp',
-    alt: 'Loiro saudável de elite — cliente do Bloom por Tamires Sousa em São João del-Rei',
-    label: 'Loiro Saudável',
+    alt: 'Loiro saudável — cliente do Bloom por Tamires Sousa em São João del-Rei',
   },
   {
     src: '/images/gallery-3.webp',
     alt: 'Coloração criativa — resultado no salão Bloom, São João del-Rei MG',
-    label: 'Coloração Criativa',
   },
   {
     src: '/images/gallery-4.webp',
     alt: 'Mechas personalizadas — Tamires Sousa, especialista em São João del-Rei',
-    label: 'Mechas Personalizadas',
   },
   {
     src: '/images/gallery-5.webp',
     alt: 'Ruivo vibrante — antes e depois no Bloom por Tamires Sousa em São João del-Rei',
-    label: 'Ruivo Vibrante',
   },
   {
     src: '/images/gallery-6.webp',
     alt: 'Loiro platinado saudável — Bloom por Tamires Sousa, São João del-Rei MG',
-    label: 'Loiro Platinado',
   },
   {
     src: '/images/gallery-7.webp',
     alt: 'Coloração gloss express — cobertura de fios brancos no Bloom, São João del-Rei',
-    label: 'Gloss Express',
   },
 ]
 
@@ -99,11 +92,11 @@ export default function GaleriaPage() {
         </nav>
 
         <h1 className="text-4xl md:text-5xl font-black mb-4 bg-gradient-to-r from-[#fff8af] to-[#D4AF37] bg-clip-text text-transparent">
-          Portfólio — Bloom por Tamires Sousa
+          Galeria de resultados
         </h1>
         <p className="text-lg text-[rgba(232,232,232,0.7)] mb-16 max-w-[700px]">
-          Trabalhos reais de colorimetria capilar realizados por Tamires Sousa em São João del-Rei, MG.
-          Ruivos, loiros, mechas e colorações criativas com técnica e cuidado com a saúde dos fios.
+          Ruivos, loiros, mechas e cores feitas por Tamires Sousa em São João del-Rei, MG.
+          Use as fotos como referência, mas lembre: o caminho ideal depende do estado atual do seu cabelo.
         </p>
 
         {/* Grid de imagens — Server Component, indexável */}
@@ -115,22 +108,19 @@ export default function GaleriaPage() {
                 alt={item.alt}
                 width={600}
                 height={700}
-                className="w-full h-[350px] object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                className="w-full h-[350px] object-cover transition-transform duration-700 group-hover:scale-105"
                 loading={i < 3 ? 'eager' : 'lazy'}
                 priority={i < 3}
               />
-              <figcaption className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent text-[#D4AF37] font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity">
-                {item.label} — Bloom por Tamires Sousa, São João del-Rei
-              </figcaption>
             </figure>
           ))}
         </div>
 
         {/* CTA */}
         <div className="text-center p-10 rounded-2xl border border-[rgba(255,248,175,0.15)] bg-[rgba(1,34,32,0.4)]">
-          <h2 className="text-2xl font-bold text-[#fff8af] mb-4">Quer um resultado assim?</h2>
+          <h2 className="text-2xl font-bold text-[#fff8af] mb-4">Quer entender o que funciona para você?</h2>
           <p className="text-[rgba(232,232,232,0.7)] mb-8">
-            Agende sua avaliação com Tamires Sousa em São João del-Rei pelo WhatsApp.
+            Envie uma foto atual do seu cabelo e uma referência do resultado desejado pelo WhatsApp.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <a

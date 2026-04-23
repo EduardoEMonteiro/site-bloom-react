@@ -4,9 +4,9 @@ import { Phone, MapPin } from 'lucide-react'
 import { WhatsAppIcon, InstagramIcon } from '@/components/icons'
 
 export const metadata: Metadata = {
-  title: 'Contato e Localização — Bloom por Tamires Sousa em São João del-Rei',
+  title: 'Contato e Endereço | Bloom por Tamires Sousa',
   description:
-    'Entre em contato com o Bloom por Tamires Sousa. Rua Antônio Rocha, 55, Centro, São João del-Rei, MG. Agendamento pelo WhatsApp: (32) 99806-3010.',
+    'Fale com o Bloom por Tamires Sousa pelo WhatsApp e veja o endereço: Rua Antônio Rocha, 55, Centro, São João del-Rei, MG.',
   alternates: { canonical: 'https://bloomts.com.br/contato' },
   openGraph: {
     title: 'Contato — Bloom por Tamires Sousa em São João del-Rei',
@@ -79,11 +79,11 @@ export default function ContatoPage() {
         </nav>
 
         <h1 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-[#fff8af] to-[#D4AF37] bg-clip-text text-transparent">
-          Contato e Localização
+          Contato e endereço
         </h1>
         <p className="text-lg text-[rgba(232,232,232,0.7)] mb-16 max-w-[600px]">
-          O Bloom por Tamires Sousa atende com hora marcada em São João del-Rei, MG.
-          Entre em contato pelo WhatsApp para agendar sua avaliação.
+          O Bloom atende com hora marcada em São João del-Rei.
+          Para começar, envie uma mensagem pelo WhatsApp contando o que você gostaria de fazer no cabelo.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">

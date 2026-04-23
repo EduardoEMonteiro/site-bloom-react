@@ -2,7 +2,7 @@
 
 export function SectionDivider() {
   return (
-    <div className="h-[120px] w-full relative overflow-hidden bg-transparent -mt-[2px] pointer-events-none z-10">
+    <div className="h-16 w-full relative overflow-hidden bg-transparent -mt-[2px] pointer-events-none z-10 md:h-20">
       {/* Line */}
       <div className="absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent -translate-y-1/2 opacity-80 animate-[pulseLine_3s_ease-in-out_infinite]" />
 

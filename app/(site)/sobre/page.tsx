@@ -3,14 +3,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Sobre Tamires Sousa — Cabeleireira em São João del-Rei | Bloom',
+  title: 'Sobre Tamires Sousa | Colorista em São João del-Rei',
   description:
-    'Conheça Tamires Sousa, especialista em colorimetria capilar em São João del-Rei, MG. Referência em ruivos, loiros e cores criativas no Bloom por Tamires Sousa.',
+    'Conheça a Tamires Sousa, colorista do Bloom em São João del-Rei. Atendimento com avaliação do fio, cor e cuidado capilar.',
   alternates: { canonical: 'https://bloomts.com.br/sobre' },
   openGraph: {
-    title: 'Sobre Tamires Sousa — Cabeleireira em São João del-Rei',
+    title: 'Sobre Tamires Sousa | Bloom em São João del-Rei',
     description:
-      'Tamires Sousa é especialista em colorimetria capilar em São João del-Rei, MG. Referência em ruivos, loiros e cores criativas.',
+      'Colorimetria, ruivos, loiros, mechas e tratamentos com avaliação do fio.',
     url: 'https://bloomts.com.br/sobre',
     locale: 'pt_BR',
     type: 'profile',
@@ -102,27 +102,26 @@ export default function SobrePage() {
             {/* Texto rico em entidades nomeadas — essencial para GEO */}
             <div className="space-y-5 text-lg text-[rgba(232,232,232,0.85)] leading-relaxed">
               <p>
-                <strong className="text-[#fff8af]">Tamires Sousa</strong> é cabeleireira e colorista especialista em colorimetria capilar,
-                com atuação em <strong className="text-[#fff8af]">São João del-Rei, MG</strong>. Fundadora do{' '}
-                <strong className="text-[#fff8af]">Bloom por Tamires Sousa</strong>, ela é referência regional em técnicas de coloração
-                avançada, com foco em ruivos, loiros saudáveis e cores criativas.
+                <strong className="text-[#fff8af]">Tamires Sousa</strong> é cabeleireira e colorista em{' '}
+                <strong className="text-[#fff8af]">São João del-Rei, MG</strong>. No{' '}
+                <strong className="text-[#fff8af]">Bloom por Tamires Sousa</strong>, o atendimento é voltado para cor, mechas,
+                ruivos, loiros, cobertura de brancos e cuidado com cabelos que passam por química.
               </p>
               <p>
-                Formada e especializada em colorimetria de alta performance, Tamires utiliza produtos
-                profissionais Schwarzkopf e técnicas como pigmentação seletiva, balayage, babylights e
-                mechas californianas. Seu diferencial está na combinação de precisão técnica com cuidado
-                real com a saúde da fibra capilar.
+                O ponto central do trabalho é a avaliação. Antes de prometer um resultado, Tamires observa a cor atual,
+                o histórico químico, a resistência do fio e a rotina de cuidado em casa. Isso ajuda a escolher um caminho
+                bonito, mas também possível.
               </p>
               <p>
                 O <strong className="text-[#fff8af]">Bloom por Tamires Sousa</strong> está localizado na{' '}
                 <strong className="text-[#fff8af]">Rua Antônio Rocha, 55, Centro, São João del-Rei, MG — CEP 36300-000</strong>.
-                O atendimento é exclusivo com hora marcada, garantindo dedicação total a cada cliente.
+                O atendimento é com hora marcada, para que cada cliente tenha tempo de conversa, diagnóstico e orientação
+                sobre a manutenção depois do salão.
               </p>
               <p>
-                As especialidades de Tamires incluem: coloração capilar, cabelos ruivos, luzes e mechas,
-                loiros saudáveis, hidratação capilar pós-química, escova progressiva e cronograma capilar
-                personalizado. Cada atendimento começa com uma consultoria para entender o histórico do
-                cabelo e definir o melhor caminho para o resultado desejado.
+                As principais frentes de trabalho são: coloração capilar, cabelos ruivos, luzes e mechas,
+                loiros, cobertura de fios brancos, tratamento pós-química e escova progressiva com avaliação
+                de compatibilidade.
               </p>
             </div>
 
@@ -152,12 +151,12 @@ export default function SobrePage() {
           <h2 className="text-3xl font-bold text-[#fff8af] mb-10 text-center">Especialidades</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: 'Cabelos Ruivos', desc: 'Pigmentação seletiva para ruivos vibrantes e duradouros em São João del-Rei.' },
-              { title: 'Loiros Saudáveis', desc: 'Clareamento técnico com preservação total da integridade da fibra capilar.' },
-              { title: 'Luzes e Mechas', desc: 'Balayage, babylights e mechas californianas com acabamento artesanal.' },
-              { title: 'Cores Criativas', desc: 'Cores fantasia e personalizadas com pigmentos de alta performance.' },
-              { title: 'Hidratação Capilar', desc: 'Cronograma capilar personalizado pós-química para restaurar saúde e brilho.' },
-              { title: 'Colorimetria Avançada', desc: 'Análise colorimétrica completa antes de cada processo químico.' },
+              { title: 'Cabelos Ruivos', desc: 'Escolha de tom, construção da cor e orientação para manter o ruivo bonito.' },
+              { title: 'Loiros', desc: 'Clareamento com avaliação do fio e cuidado no pós-procedimento.' },
+              { title: 'Luzes e Mechas', desc: 'Iluminação pensada para o efeito desejado e para a rotina da cliente.' },
+              { title: 'Cobertura de Brancos', desc: 'Coloração para cobrir, tonalizar ou suavizar os fios brancos.' },
+              { title: 'Tratamento Capilar', desc: 'Cuidado para fios ressecados, porosos ou sensibilizados por química.' },
+              { title: 'Avaliação do Fio', desc: 'Diagnóstico antes de cor, mechas, loiro, ruivo ou progressiva.' },
             ].map((item, i) => (
               <div
                 key={i}

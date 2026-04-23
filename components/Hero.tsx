@@ -1,134 +1,80 @@
-'use client'
-
-import { useEffect, useRef, useCallback, useState } from 'react'
-import Particles from "react-tsparticles"
-import { loadSlim } from "tsparticles-slim"
-import type { Engine } from "tsparticles-engine"
+import Image from 'next/image'
+import Link from 'next/link'
 import { WhatsAppIcon } from '@/components/icons'
 
+const whatsappHref =
+  'https://wa.me/5532998063010?text=Olá%20Tamires!%20Vim%20pelo%20site%20e%20quero%20marcar%20uma%20avaliação%20para%20meu%20cabelo.'
+
 export function Hero() {
-    const wordsRef = useRef<(HTMLSpanElement | null)[]>([])
-    const paragraphRef = useRef<HTMLParagraphElement>(null)
-    const buttonRef = useRef<HTMLAnchorElement>(null)
-    const [showParticles, setShowParticles] = useState(false)
+  return (
+    <section className="relative overflow-hidden bg-[radial-gradient(circle_at_18%_18%,rgba(212,175,55,0.18),transparent_28%),linear-gradient(135deg,#020504_0%,#071c1a_46%,#000_100%)] px-[5%] pb-20 pt-36 md:min-h-screen md:pt-40">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/70 to-transparent" />
+      <div className="absolute -right-32 top-28 h-80 w-80 rounded-full bg-[#D4AF37]/10 blur-3xl" />
+      <div className="absolute -bottom-40 left-10 h-96 w-96 rounded-full bg-[#012220] blur-3xl" />
 
-    const titleWords = [
-        "Especialista",
-        "em",
-        "Coloração",
-        "em",
-        "São",
-        "João",
-        "del",
-        "Rei."
-    ]
+      <div className="relative z-10 mx-auto grid max-w-[1240px] items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+        <div>
+          <p className="mb-5 inline-flex rounded-full border border-[#D4AF37]/30 bg-black/30 px-4 py-2 text-sm font-semibold uppercase tracking-[0.22em] text-[#D4AF37]">
+            Colorimetria em São João del-Rei
+          </p>
 
-    const particlesInit = useCallback(async (engine: Engine) => {
-        await loadSlim(engine)
-    }, [])
+          <h1 className="max-w-[760px] text-5xl font-black leading-[0.95] tracking-tight text-[#fff8af] sm:text-6xl md:text-7xl lg:text-8xl">
+            Cor bonita começa com um cabelo bem cuidado.
+          </h1>
 
-    useEffect(() => {
-        // Partículas apenas em desktop (>= 768px) — melhora LCP mobile
-        setShowParticles(window.innerWidth >= 768)
+          <p className="mt-7 max-w-[650px] text-lg leading-relaxed text-[rgba(232,232,232,0.82)] md:text-xl">
+            Ruivos, loiros, mechas, cobertura de brancos e tratamentos com avaliação antes da química.
+            A Tamires olha seu fio, entende seu histórico e combina com você o caminho mais seguro para chegar no resultado.
+          </p>
 
-        // Animar palavras do título
-        wordsRef.current.forEach((word, index) => {
-            if (word) {
-                setTimeout(() => {
-                    word.style.opacity = '1'
-                    word.style.transform = 'translateY(0) rotateX(0)'
-                }, index * 200 + 500)
-            }
-        })
+          <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+            <a
+              href={whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#fff8af] px-8 py-4 text-base font-black text-black shadow-[0_18px_50px_rgba(212,175,55,0.28)] transition-all hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(212,175,55,0.38)]"
+            >
+              <WhatsAppIcon className="h-5 w-5" />
+              Quero uma avaliação
+            </a>
+            <Link
+              href="#portfolio"
+              className="inline-flex items-center justify-center rounded-full border border-[#D4AF37]/55 px-8 py-4 text-base font-bold text-[#fff8af] transition-all hover:bg-[#D4AF37] hover:text-black"
+            >
+              Ver resultados
+            </Link>
+          </div>
 
-        if (paragraphRef.current) {
-            setTimeout(() => { paragraphRef.current!.style.opacity = '1' }, 1500)
-        }
-
-        if (buttonRef.current) {
-            setTimeout(() => { buttonRef.current!.style.opacity = '1' }, 2000)
-        }
-    }, [])
-
-    return (
-        <section className="relative min-h-screen md:h-screen flex items-center justify-center bg-black" style={{ position: 'relative', overflow: 'hidden', isolation: 'isolate' }}>
-            <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: 0, pointerEvents: 'none' }}>
-                {showParticles && (
-                    <Particles
-                        id="tsparticles"
-                        init={particlesInit}
-                        options={{
-                            background: { color: { value: "transparent" } },
-                            fullScreen: { enable: false, zIndex: 0 },
-                            fpsLimit: 60,
-                            particles: {
-                                color: { value: ["#D4AF37", "#fff8af", "#ffffff"] },
-                                links: { enable: false },
-                                move: {
-                                    enable: true,
-                                    speed: 0.5,
-                                    direction: "none",
-                                    random: true,
-                                    straight: false,
-                                    outModes: { default: "out" },
-                                },
-                                number: { density: { enable: true, area: 800 }, value: 150 },
-                                opacity: {
-                                    value: { min: 0.3, max: 1 },
-                                    animation: { enable: true, speed: 1, sync: false },
-                                },
-                                shape: { type: "circle" },
-                                size: { value: { min: 1, max: 3 } },
-                            },
-                            detectRetina: true,
-                        }}
-                        style={{ position: 'absolute', width: '100%', height: '100%', top: 0, left: 0 }}
-                    />
-                )}
+          <div className="mt-10 grid max-w-[720px] grid-cols-1 gap-3 text-sm text-[rgba(232,232,232,0.72)] sm:grid-cols-3">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+              <strong className="block text-[#fff8af]">Hora marcada</strong>
+              Atendimento sem pressa
             </div>
-
-            <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-[#012220]/30 to-black/50 pointer-events-none" style={{ zIndex: 1 }} />
-
-            <div className="relative text-center max-w-[1200px] px-8" style={{ zIndex: 10 }}>
-                <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[8rem] font-black tracking-tight mb-26 flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-5">
-                    {titleWords.map((word, index) => (
-                        <span
-                            key={`${word}-${index}`}
-                            ref={el => { wordsRef.current[index] = el }}
-                            className="inline-block opacity-0 translate-y-[100px] rotate-x-[-90deg] bg-gradient-to-r from-[#fff8af] via-[#D4AF37] to-[#fff8af] bg-clip-text text-transparent hero-word-animation"
-                            style={{
-                                transformStyle: 'preserve-3d',
-                                transition: 'all 1s cubic-bezier(0.4, 0, 0.2, 1)',
-                                backgroundSize: '200% 200%',
-                            }}
-                        >
-                            {word}
-                        </span>
-                    ))}
-                </h1>
-
-                <p
-                    ref={paragraphRef}
-                    className="text-lg sm:text-xl md:text-2xl mt-8 mb-12 opacity-0 font-light tracking-wide text-[rgba(232,232,232,0.8)] transition-opacity duration-1000 max-w-[900px] mx-auto"
-                >
-                    Especialista em colorimetria capilar para ruivos, loiros saudáveis e cores criativas em São João del Rei
-                </p>
-
-                <a
-                    ref={buttonRef}
-                    href="https://wa.me/5532998063010?text=Olá%20Tamires!%20Quero%20agendar%20uma%20avaliação%20para%20[Loiro%20/%20Ruivo%20/%20Cobertura%20de%20Brancos%20Gloss%20Express]."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 sm:gap-3 md:gap-4 px-8 sm:px-12 md:px-16 py-4 sm:py-5 md:py-6 bg-gradient-to-r from-[#D4AF37] to-[#fff8af] text-black text-lg sm:text-xl font-bold rounded-full opacity-0 transition-all duration-400 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(212,175,55,0.5)] shadow-[0_10px_40px_rgba(212,175,55,0.3)]"
-                >
-                    <WhatsAppIcon className="w-6 h-6" />
-                    Agende seu Horário
-                </a>
+            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+              <strong className="block text-[#fff8af]">Centro</strong>
+              Rua Antônio Rocha, 55
             </div>
-
-            <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-[fadeInUp_1s_ease_3s_forwards]" style={{ zIndex: 10 }}>
-                <div className="w-[2px] h-[50px] bg-gradient-to-b from-[#D4AF37] to-transparent animate-[scrollLine_2s_ease-in-out_infinite]" />
+            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+              <strong className="block text-[#fff8af]">Plano realista</strong>
+              Sem promessa impossível
             </div>
-        </section>
-    )
+          </div>
+        </div>
+
+        <div className="relative mx-auto w-full max-w-[520px] self-end">
+          <div className="absolute -inset-4 rounded-[34px] bg-gradient-to-br from-[#D4AF37]/25 via-transparent to-[#fff8af]/10 blur-xl" />
+          <div className="relative overflow-hidden rounded-[30px] border border-[#D4AF37]/25 bg-[#071c1a] shadow-[0_30px_90px_rgba(0,0,0,0.55)]">
+            <Image
+              src="/images/about.webp"
+              alt="Tamires Sousa, colorista do Bloom em São João del-Rei"
+              width={620}
+              height={740}
+              className="h-[700px] w-full object-cover object-top"
+              priority
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  )
 }

@@ -21,7 +21,7 @@ export function Footer() {
                             style={{ filter: 'drop-shadow(0 0 15px rgba(212, 175, 55, 0.4))' }}
                         />
                         <p className="text-[rgba(232,232,232,0.7)] text-lg">
-                            Especialista em colorimetria capilar em São João del-Rei.
+                            Cor, mechas e tratamento capilar com avaliação do fio em São João del-Rei.
                         </p>
                     </div>
 
@@ -43,7 +43,7 @@ export function Footer() {
                                 className="flex items-center gap-3 text-[rgba(232,232,232,0.7)] hover:text-[#D4AF37] transition-all hover:pl-2 text-lg"
                             >
                                 <WhatsAppIcon className="text-[#D4AF37] w-5 h-5 flex-shrink-0" />
-                                <span>Agendar Avaliação</span>
+                                <span>Marcar avaliação</span>
                             </a>
                         </div>
                     </div>
@@ -88,9 +88,7 @@ export function Footer() {
                         © {new Date().getFullYear()} Bloom por Tamires Sousa. Todos os direitos reservados.
                     </p>
                     <p className="text-[rgba(232,232,232,0.5)] text-base mt-2 flex items-center justify-center gap-1">
-                        Desenvolvido com{' '}
-                        <span className="text-[#D4AF37]">♥</span>
-                        {' '}por{' '}
+                        Desenvolvido por{' '}
                         <a
                             href="https://aurago.site/"
                             target="_blank"
